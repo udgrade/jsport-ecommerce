@@ -1,0 +1,33 @@
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.pill {
+  font-family: var(--font-display);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  padding: var(--space-2) var(--space-4);
+  transition: all 0.18s ease;
+  white-space: nowrap;
+}
+
+.pill:hover {
+  color: var(--color-text);
+  border-color: var(--color-fire);
+  background: rgba(249, 115, 22, 0.06);
+}
+
+.pillActive {
+  color: var(--color-fire) !important;
+  border-color: var(--color-fire) !important;
+  background: rgba(249, 115, 22, 0.1) !important;
+  box-shadow: 0 0 12px rgba(249, 115, 22, 0.15);
+}

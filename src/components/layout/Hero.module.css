@@ -1,0 +1,211 @@
+.hero {
+  position: relative;
+  overflow: hidden;
+  min-height: 540px;
+  display: flex;
+  align-items: center;
+  padding: var(--space-8) var(--space-5);
+  max-width: 1280px;
+  margin: 0 auto;
+  gap: var(--space-8);
+}
+
+/* Ambient orbs */
+.orbFire {
+  position: absolute;
+  top: -80px;
+  left: -80px;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(249, 115, 22, 0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.orbElectric {
+  position: absolute;
+  bottom: -100px;
+  right: 20%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* Content */
+.content {
+  flex: 1;
+  position: relative;
+  z-index: 1;
+  max-width: 560px;
+}
+
+.eyebrow {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--color-fire);
+  margin-bottom: var(--space-3);
+}
+
+.headline {
+  font-family: var(--font-display);
+  font-size: clamp(3.5rem, 8vw, 6rem);
+  font-weight: 800;
+  line-height: 0.9;
+  letter-spacing: -0.01em;
+  color: var(--color-text);
+  margin-bottom: var(--space-5);
+  text-transform: uppercase;
+}
+
+.headlineFire {
+  color: var(--color-fire);
+  text-shadow: 0 0 40px rgba(249, 115, 22, 0.5);
+}
+
+.body {
+  font-size: 1.05rem;
+  font-weight: 300;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  margin-bottom: var(--space-6);
+  max-width: 420px;
+}
+
+/* CTAs */
+.ctas {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.ctaPrimary {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #fff;
+  background: linear-gradient(135deg, var(--color-fire) 0%, var(--color-fire-dim) 100%);
+  padding: var(--space-3) var(--space-6);
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-fire);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.ctaPrimary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 36px rgba(249, 115, 22, 0.4);
+}
+
+.ctaSecondary {
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 2px;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.ctaSecondary:hover {
+  color: var(--color-electric);
+  border-color: var(--color-electric);
+}
+
+/* Visual */
+.visual {
+  flex-shrink: 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+  width: 320px;
+}
+
+.shoeGlow {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 260px;
+  height: 260px;
+  background: radial-gradient(circle, rgba(249, 115, 22, 0.2) 0%, rgba(59, 130, 246, 0.1) 50%, transparent 70%);
+  border-radius: 50%;
+  animation: pulse 3s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.logoHero {
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  object-fit: cover;
+  position: relative;
+  z-index: 1;
+  animation: float 4s ease-in-out infinite;
+  filter:
+    drop-shadow(0 0 24px rgba(249, 115, 22, 0.55))
+    drop-shadow(0 0 48px rgba(59, 130, 246, 0.3));
+}
+
+.badge {
+  position: relative;
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-5);
+  text-align: center;
+  z-index: 1;
+  align-self: flex-end;
+}
+
+.badgeYear {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--color-fire);
+  line-height: 1;
+}
+
+.badgeLabel {
+  display: block;
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  color: var(--color-text-dim);
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.05); opacity: 0.8; }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: var(--space-7) var(--space-5);
+    min-height: auto;
+  }
+  .body { max-width: 100%; }
+  .ctas { justify-content: center; }
+  .visual { width: 100%; align-items: center; }
+  .logoHero { width: 180px; height: 180px; }
+  .badge { align-self: center; }
+}

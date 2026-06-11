@@ -1,0 +1,57 @@
+.footer {
+  border-top: 1px solid var(--color-border);
+  margin-top: var(--space-8);
+  padding: var(--space-7) var(--space-5);
+}
+
+.inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+  text-align: center;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.logoImg {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  filter: drop-shadow(0 0 8px rgba(249, 115, 22, 0.4));
+}
+
+.logoFire {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--color-fire);
+  text-shadow: 0 0 16px rgba(249, 115, 22, 0.4);
+}
+
+.logoText {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--color-text);
+}
+
+.tagline {
+  font-size: 0.88rem;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+}
+
+.copy {
+  font-size: 0.75rem;
+  color: var(--color-text-dim);
+  letter-spacing: 0.04em;
+}
