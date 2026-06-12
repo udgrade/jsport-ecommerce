@@ -1,7 +1,6 @@
 import { useState, useMemo } from 'react';
 import type { Product } from '../types';
 import { useCart } from '../context/CartContext';
-import { Spinner } from '../components/ui/Spinner';
 import styles from './ProductDetailPage.module.css';
 
 interface ProductDetailPageProps {
